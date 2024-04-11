@@ -5,7 +5,7 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
     // Add the parallax style
-    wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/sass/custom.scss' );
+    wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/style/custom.css' );
 
     // Add the Swiper CSS
     wp_enqueue_style( 'swiper-bundle', get_template_directory_uri() . '-child/js/swiper-bundle.min.js', array(), '10.0.0', true);
