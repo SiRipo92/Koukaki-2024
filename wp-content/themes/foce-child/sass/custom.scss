@@ -1,0 +1,40 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+
+// Effet de fade-in des sections
+@keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.story, #studio, .site-footer {
+    animation: fade-in-up 2s ease-in-out;
+}
+
+.banner,.story__article p, #place p, #studio p {
+	animation: fade-in-down 2s ease-in-out;
+}
