@@ -4,8 +4,10 @@ get_header();
 ?>
 
     <main id="primary" class="site-main">
-        <section class="parallax-container">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+        <section class="banner">
+            <div class="parallax-container">
+                <img src="<?php echo get_theme_file_uri(). '/assets/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants" id="logo">
+            </div>
         </section>
         <section id="#story" class="story">
             <h2>L'histoire</h2>
