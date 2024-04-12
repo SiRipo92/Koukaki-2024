@@ -2,18 +2,11 @@
 
 get_header();
 ?>
-<! -------------- Banner -------------- >
+
     <main id="primary" class="site-main">
-        <section class="banner">
-            <video class="video bnr-img-backup" width="1440" autoplay="autoplay" loop="infinit" muted="true" plays-inline>
-                <source src="<?php echo get_theme_file_uri().'/assets/banner.mp4'; ?>" type="video/mp4" alt="video animation de Koukaki studio animation">
-            </video>
-            <div class="parallax">
-                <img class="logo" src="<?php echo get_theme_file_uri() . '/assets/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
-            </div>
+        <section class="parallax-container">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
         </section>
-
-
         <section id="#story" class="story">
             <h2>L'histoire</h2>
             <article id="" class="story__article">
