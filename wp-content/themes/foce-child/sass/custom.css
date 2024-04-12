@@ -8,30 +8,33 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-@keyframes fade-in-down {
+@keyframes fadeDown {
   0% {
+    transform: translateY(-20%);
     opacity: 0;
-    transform: translateY(-200px);
   }
   100% {
-    opacity: 1;
     transform: translateY(0);
+    opacity: 1;
   }
 }
-@keyframes fade-in-up {
+@keyframes fadeUp {
   0% {
+    transform: translateY(20%);
     opacity: 0;
-    transform: translateY(300px);
   }
   100% {
-    opacity: 1;
     transform: translateY(0);
+    opacity: 1;
   }
 }
-.story, #studio, .site-footer {
-  animation: fade-in-up 2s ease-in-out;
+.banner {
+  animation: fadeDown 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.banner, .story__article p, #place p, #studio p {
-  animation: fade-in-down 2s ease-in-out;
+#logo {
+  animation: fadeUp 1s ease-in-out;
 }/*# sourceMappingURL=custom.css.map */
