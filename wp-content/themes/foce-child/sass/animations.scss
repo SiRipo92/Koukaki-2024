@@ -1,55 +1,37 @@
- // Keyframe animations
- @keyframes fadeIn-img {
-    0% {
-      transform: translateY(-400px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  } 
-  
-  @keyframes fadeUp {
-      0% {
-          transform: translateY(400px);
-          opacity: 0;
-      }
-      100% {
-          transform: translateY(0);
-          opacity: 1;
-      } 
-  }
-@keyframes fadeIn_bg {
-    0% {
-        opacity: 0;
-        background-position: 0 400px;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes fadeIn {
-    0% {
-        transform: translateY(400px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0px);
-        opacity: 1;
-    }
-}
+//*****************************************  Animations ****************************************/
+//****************************** Keyframe animations *******************************/
+
+// Image fades in while moving up from below (with absolute positioning)
 @keyframes Title-Animation {
     0% {
-        bottom: -200px;
+        transform: translateY(-300px);
         opacity: 0;
     }
     100% {
-        bottom: 0;
+        transform: translateY(0);
         opacity: 1;
     }
 }
-@keyframes floating-cat {
+// Background fades in while moving up 
+@keyframes Banner-fade-down {
+    0% {
+        opacity: 0;
+        background-position: 0 300px;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+// Cat floats while moving diagonally
+@keyframes floating-diagonal-cat {
     0% {
         transform: translate3d(0px, -10px, 0px);
     }
@@ -65,4 +47,23 @@
     100% {
         transform: translate3d(0px, -10px, 0px);
     }
+}
+
+//****************************** Classes using the animations *******************************/
+$animation-duration: .75s;
+
+.banner-fade-down {
+    animation: Banner-fade-down $animation-duration ease-in-out;
+}
+// Title fades in while moving up from below
+.title-animation {
+    animation: Title-Animation $animation-duration ease-in-out;
+}
+// For inner HTML elements like paragraph texts
+.fade-in {
+    animation: fade-in $animation-duration ease-in-out;
+}
+
+.floating-diagonal-cat {
+    animation: floating-diagonal-cat $animation-duration infinite ease-in-out;
 }

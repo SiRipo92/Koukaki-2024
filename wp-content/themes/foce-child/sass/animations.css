@@ -1,53 +1,31 @@
-@keyframes fadeIn-img {
-  0% {
-    transform: translateY(-400px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes fadeUp {
-  0% {
-    transform: translateY(400px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes fadeIn_bg {
-  0% {
-    opacity: 0;
-    background-position: 0 400px;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  0% {
-    transform: translateY(400px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
 @keyframes Title-Animation {
   0% {
-    bottom: -200px;
+    transform: translateY(-300px);
     opacity: 0;
   }
   100% {
-    bottom: 0;
+    transform: translateY(0);
     opacity: 1;
   }
 }
-@keyframes floating-cat {
+@keyframes Banner-fade-down {
+  0% {
+    opacity: 0;
+    background-position: 0 300px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes floating-diagonal-cat {
   0% {
     transform: translate3d(0px, -10px, 0px);
   }
@@ -63,4 +41,19 @@
   100% {
     transform: translate3d(0px, -10px, 0px);
   }
+}
+.banner-fade-down {
+  animation: Banner-fade-down 0.75s ease-in-out;
+}
+
+.title-animation {
+  animation: Title-Animation 0.75s ease-in-out;
+}
+
+.fade-in {
+  animation: fade-in 0.75s ease-in-out;
+}
+
+.floating-diagonal-cat {
+  animation: floating-diagonal-cat 0.75s infinite ease-in-out;
 }/*# sourceMappingURL=animations.css.map */
