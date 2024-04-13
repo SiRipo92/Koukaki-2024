@@ -8,39 +8,53 @@
  Version: 0.1
  */
 
- // Keyframe animations
-@keyframes fadeDown {
-  0% {
-    transform: translateY(-20%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}; 
+@import 'animations';
 
-@keyframes fadeUp {
-    0% {
-        transform: translateY(20%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    } 
-};
+/*******************************
+ * General
+ *******************************/
+body {
+    height: auto;
+}
 
+/*******************************
+ * Banner
+ *******************************/
 .banner {
-    animation: fadeDown 1s ease-in-out;
-    display: flex;
+    position: relative;
+}
+
+#banner-container {
+    width: 100%;
+    min-height: 806px;
+    overflow: hidden;
+    position: absolute;
+}
+
+#parallax-container {
+    width: 100%;
+    perspective: 1000px;
+    overflow: hidden;
+    display:flex;
     justify-content: center;
     align-items: center;
 }
-.parallax {
-    
+
+#parallax-video-container {
+    z-index: -1;
+    position: absolute;
 }
 
-#logo {
-    animation: fadeUp 1s ease-in-out;
+#parallax-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#parallax-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }

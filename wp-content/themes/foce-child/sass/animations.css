@@ -1,0 +1,66 @@
+@keyframes fadeIn-img {
+  0% {
+    transform: translateY(-400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeUp {
+  0% {
+    transform: translateY(400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn_bg {
+  0% {
+    opacity: 0;
+    background-position: 0 400px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    transform: translateY(400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes Title-Animation {
+  0% {
+    bottom: -200px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes floating-cat {
+  0% {
+    transform: translate3d(0px, -10px, 0px);
+  }
+  25% {
+    transform: translate3d(-20px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(0px, 10px, 0px);
+  }
+  75% {
+    transform: translate3d(20px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(0px, -10px, 0px);
+  }
+}/*# sourceMappingURL=animations.css.map */

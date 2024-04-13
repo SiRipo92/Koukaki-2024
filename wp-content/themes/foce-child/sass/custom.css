@@ -8,9 +8,9 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-@keyframes fadeDown {
+@keyframes fadeIn-img {
   0% {
-    transform: translateY(-20%);
+    transform: translateY(-400px);
     opacity: 0;
   }
   100% {
@@ -20,7 +20,7 @@
 }
 @keyframes fadeUp {
   0% {
-    transform: translateY(20%);
+    transform: translateY(400px);
     opacity: 0;
   }
   100% {
@@ -28,13 +28,98 @@
     opacity: 1;
   }
 }
+@keyframes fadeIn_bg {
+  0% {
+    opacity: 0;
+    background-position: 0 400px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    transform: translateY(400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes Title-Animation {
+  0% {
+    bottom: -200px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes floating-cat {
+  0% {
+    transform: translate3d(0px, -10px, 0px);
+  }
+  25% {
+    transform: translate3d(-20px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(0px, 10px, 0px);
+  }
+  75% {
+    transform: translate3d(20px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(0px, -10px, 0px);
+  }
+}
+/*******************************
+ * General
+ *******************************/
+body {
+  height: auto;
+}
+
+/*******************************
+ * Banner
+ *******************************/
 .banner {
-  animation: fadeDown 1s ease-in-out;
+  position: relative;
+}
+
+#banner-container {
+  width: 100%;
+  min-height: 806px;
+  overflow: hidden;
+  position: absolute;
+}
+
+#parallax-container {
+  width: 100%;
+  perspective: 1000px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#logo {
-  animation: fadeUp 1s ease-in-out;
+#parallax-video-container {
+  z-index: -1;
+  position: absolute;
+}
+
+#parallax-video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#parallax-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }/*# sourceMappingURL=custom.css.map */

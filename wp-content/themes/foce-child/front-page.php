@@ -5,8 +5,15 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner">
-            <div class="parallax-container">
-                <img src="<?php echo get_theme_file_uri(). '/assets/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants" id="logo">
+            <div id= "banner-container">
+                <div id= "parallax-video-container">
+                        <video autoplay loop muted id="bg-video" class="fallback-video" poster="<?php echo get_stylesheet_directory_uri(). '/assets/images/banner_bg.png'; ?>">
+                            <source src="<?php echo get_stylesheet_directory_uri(). '/assets/images/banner-video.mp4'; ?>" type="video/mp4">
+                        </video>
+                </div>
+                <div id="parallax-logo">
+                    <img class="floating-cat" src ="<?php echo get_stylesheet_directory_uri(). '/assets/images/logo.png'; ?>" alt="chat flottant">
+                </div>
             </div>
         </section>
         <section id="#story" class="story">
