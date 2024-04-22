@@ -1,0 +1,130 @@
+// For the sections
+
+@include keyframes('fade-in') {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes('rotate'){
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@include keyframes('fadeIn-moveUp') {
+  from {
+    opacity: 0;
+    transform: translateY(400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility:  visible;
+  }
+}
+
+@include keyframes('fadeIn-moveDown') {
+  from {
+    opacity: 0;
+    transform: translateY(-400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility:  visible;
+  }
+}
+
+@include keyframes('move-down') {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@include keyframes('small-moveUp') {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// or the same as above but with fade in (delayed start)
+@include keyframes('moveDown-fadeIn') {
+  0% {
+    transform: translateY(300px);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(275px);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// fade effect for titles
+@include keyframes ('title-fadeIn') {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+// move up effect for titles w/ delay
+@include keyframes ('title-moveUp') {
+0% {
+  transform: translateY(50px);
+}
+65% {
+  transform: translateY(50px);
+}
+100% {
+  transform: translateY(0);
+}
+}
+
+///////////////// Animationn classes
+/// For the sections
+// fade in
+.fade-in {
+  animation: fade-in 1s ease-in;
+}
+
+.title-animation {
+  animation: title-fadeIn 1.5s ease-in, title-moveUp 1.5s ease-in;
+}
+
+// rotate
+
+:root {
+--flowers-rotation-speed: 20s;
+}
+
+/*****************************************************************
+/*  Applying animation classes
+
+// For the sections
+
+// fade in */
+
+* h2::before, h2::after,
+h3::before, h3::after,
+article ::after,
+.site-footer ul::after {
+  animation: rotate var(--flowers-rotation-speed);
+}

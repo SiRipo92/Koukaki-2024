@@ -1,0 +1,162 @@
+/////////////////// KEYFRAMES
+
+@include keyframes (spin-flowers) {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@include keyframes(fade-in) {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@include keyframes(fade-out) {
+  0%{
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframes(fade-in-slide-up) {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+@include keyframes (fade-in-slide-down) {
+  from {
+    opacity: 0;
+    transform: translateY(-300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+@include keyframes (slide-up) {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+////////////////  Slowdown the animation for the titles
+
+@include keyframes(title-fade-in) {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: .2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(title-slide-up) {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+// Floating Logo 
+@include keyframes(floating) {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  10%, 90% {
+    transform: translate3d(5px, 20px, 15px);
+  }
+  20%, 80% {
+    transform: translate3d(20px, -20px, -20px);
+
+  }
+  30%, 70% {
+    transform: translate3d(5px, 10px, 10px);
+ }
+  40%, 60% {
+    transform: translate3d(-20px, -20px, -5px); 
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.title-anim {
+  animation: title-slide-up 1.5s ease-in forwards;
+}
+
+.fade-in {
+  animation: fade-in 2s  backwards;
+}
+.fade-out {
+  animation: fade-out 2s forwards;
+}
+
+
+////// Rotating flowers
+
+:root {
+  --flowers-rotation-speed: 10s;
+}
+
+.story h2::after, .story__article::after, 
+#studio h2::before, #studio h2::after,
+.nomination::before, .nomination::after,
+.site-footer ul::after {
+  animation: spin-flowers var(--flowers-rotation-speed) linear infinite;
+}
+
+.banner {
+  animation: fade-in-slide-down 1.5s 1 ease-in-out backwards;
+}
+
+.hero-header__logo img {
+  animation: fade-in-slide-up 1.5s 1 ease-in backwards, floating 17s 2s ease-in infinite alternate;
+}
+
+.animation-item, .place_title, .story__title, #place h3, .nomination h3, .site-footer h3 {
+  animation: title-slide-up 1.5s ease-in backwards;
+}
+.story__text {
+  transform: opacity 1.5s forwards;
+  animation: fade-in 1.5s both alternate;
+}
