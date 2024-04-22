@@ -2,28 +2,30 @@
 
 get_header();
 ?>
-    <main id="primary" class="site-main">
+<main id="primary" class="site-main">
 <!-- Section "hero-banner" -->
-        <section class="banner">
-            <div class="banner_video-container">
-                <video autoplay muted loop id="banner_video">
+    <section class="hero-header">
+        <div class="banner-container">
+            <div class="banner">
+                <video autoplay muted loop id="hero_video">
                     <source src="<?php echo get_stylesheet_directory_uri(). '/assets/videos/banner-video.mp4'; ?>" type="video/mp4">
-                </video>
+                 </video>
             </div>
-            <div class="banner_logo">
+            <div class ="hero_logo">
                 <img src="<?php echo get_stylesheet_directory_uri(). '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants" id="logo">
             </div>
-        </section>
+        </div>
+    </section>
 
 <!-- Section "story" -->
-        <section id="#story" class="story">
-            <span><h2>L'histoire</h2></span>
-            <article id="story-text" class="story__article">
-                <p><?php echo get_theme_mod('story'); ?></p>
-            </article>
+    <section id="#story" class="story">
+        <span><h2>L'histoire</h2></span>
+        <article id="story-text" class="story__article">
+            <p><?php echo get_theme_mod('story'); ?></p>
+        </article>
 
 <!-- Section "characters" with slider -->
-            <?php get_template_part('template-partials/page-characters'); ?>
+        <?php get_template_part('template-partials/page-characters'); ?>
 
 <!-- Section "place" -->
             <article id="place" class="story__place">
