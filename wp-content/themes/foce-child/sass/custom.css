@@ -8,118 +8,366 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
-@keyframes fadeIn-img {
+@keyframes fade-in {
   0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeIn-moveUp {
+  from {
+    opacity: 0;
+    transform: translateY(400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+@keyframes fadeIn-moveDown {
+  from {
+    opacity: 0;
     transform: translateY(-400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+@keyframes move-down {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes small-moveUp {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes moveDown-fadeIn {
+  0% {
+    transform: translateY(300px);
     opacity: 0;
+  }
+  40% {
+    transform: translateY(275px);
+    opacity: 0.3;
   }
   100% {
     transform: translateY(0);
     opacity: 1;
   }
 }
-@keyframes fadeUp {
+@keyframes title-fadeIn {
   0% {
-    transform: translateY(400px);
     opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes title-moveUp {
+  0% {
+    transform: translateY(50px);
+  }
+  65% {
+    transform: translateY(50px);
   }
   100% {
     transform: translateY(0);
-    opacity: 1;
   }
 }
-@keyframes fadeIn_bg {
-  0% {
-    opacity: 0;
-    background-position: 0 400px;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  0% {
-    transform: translateY(400px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-@keyframes Title-Animation {
-  0% {
-    bottom: -200px;
-    opacity: 0;
-  }
-  100% {
-    bottom: 0;
-    opacity: 1;
-  }
-}
-@keyframes floating-cat {
-  0% {
-    transform: translate3d(0px, -10px, 0px);
-  }
-  25% {
-    transform: translate3d(-20px, 0px, 0px);
-  }
-  50% {
-    transform: translate3d(0px, 10px, 0px);
-  }
-  75% {
-    transform: translate3d(20px, 0px, 0px);
-  }
-  100% {
-    transform: translate3d(0px, -10px, 0px);
-  }
-}
-/*******************************
- * General
- *******************************/
-body {
-  height: auto;
+.fade-in {
+  animation: fade-in 1s ease-in;
 }
 
-/*******************************
- * Banner
- *******************************/
-.banner {
+.title-animation {
+  animation: title-fadeIn 1.5s ease-in, title-moveUp 1.5s ease-in;
+}
+
+:root {
+  --flowers-rotation-speed: 20s;
+}
+
+/*****************************************************************
+/*  Applying animation classes
+
+// For the sections
+
+// fade in */
+* h2::before, h2::after,
+h3::before, h3::after,
+article ::after,
+.site-footer ul::after {
+  animation: rotate var(--flowers-rotation-speed);
+}
+
+.site-footer {
   position: relative;
-}
-
-#banner-container {
-  width: 100%;
-  min-height: 806px;
+  display: flex;
+  padding-top: 18em;
+  padding-bottom: 1em;
   overflow: hidden;
+}
+.site-footer::before {
+  content: url("./assets/images/Sunflower.png");
   position: absolute;
+  left: 4em;
+  top: 0em;
+}
+.site-footer::after {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  right: -4em;
+  bottom: 7.8em;
+}
+.site-footer ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  list-style-type: none;
+}
+.site-footer ul li {
+  flex: 1;
+  text-align: center;
+}
+.site-footer ul li a {
+  text-decoration: none;
+}
+.site-footer ul::after {
+  content: url("./assets/images/hibiscus_footer.png");
+  position: absolute;
+  left: calc(50% - 323px);
+  bottom: -28.5em;
+  z-index: -1;
 }
 
-#parallax-container {
-  width: 100%;
-  perspective: 1000px;
-  overflow: hidden;
+@media all and (max-width: 920px) {
+  .site-footer::before {
+    content: "";
+  }
+}
+@media all and (max-width: 700px) {
+  .site-footer::after {
+    content: "";
+  }
+}
+.banner {
+  background-image: url("../../assets/images/banner.png");
+  min-height: 700px;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.banner img {
+  margin-top: -10%;
+  width: 50%;
+}
 
-#parallax-video-container {
+.story {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.story h2::before {
+  content: url("../../assets/images/sunflower_leaves.png");
+  position: absolute;
+  left: 0;
+  top: 1.8em;
   z-index: -1;
-  position: absolute;
 }
-
-#parallax-video {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-#parallax-logo {
+.story h2::after {
+  content: url("../../assets/images/Sunflower.png");
   position: absolute;
-  top: 50%;
+  left: 0.7em;
+  top: 6em;
+}
+.story__article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  font-size: 15px;
+  padding-bottom: 2em;
+  background-color: #FFF5E9;
+}
+.story__article::before {
+  content: url("../../assets/images/hibiscus_leaves.png");
+  position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+  top: 8em;
+  z-index: -1;
+}
+.story__article::after {
+  content: url("../../assets/images/Hibiscus.png");
+  position: absolute;
+  left: calc(50% + 414px);
+  top: 2em;
+}
+.story #characters {
+  margin: 6em;
+  display: flex;
+  text-align: center;
+}
+.story #characters h3 {
+  background-image: url("../../assets/images/orange_characters_bg.png");
+}
+.story #characters div {
+  flex: 1;
+}
+.story #characters .other-characters {
+  display: flex;
+  flex-wrap: wrap;
+}
+.story #characters .other-characters figure {
+  width: 50%;
+  padding: 2% 10%;
+  margin: 0;
+}
+.story #place {
+  display: flex;
+  background-image: url("../../assets/images/place_bg.png");
+  width: 100%;
+  min-height: 699px;
+  background-size: cover;
+}
+.story #place h3 {
+  background-image: url("../../assets/images/orange_place_bg.png");
+  margin-bottom: -1em;
+}
+.story #place > div {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 6em;
+}
+.story #place > div p {
+  padding-left: 5em;
+}
+
+#studio {
+  position: relative;
+  margin-top: 3em;
+}
+#studio h2 {
+  overflow: hidden;
+  background-image: url("../../assets/images/purple_studio_bg.png");
+}
+#studio h2::before {
+  content: url("../../assets/images/random_flower.png");
+  position: absolute;
+  left: -1em;
+  top: 0;
+}
+#studio h2::after {
+  content: url("../../assets/images/flower.png");
+  position: absolute;
+  right: 1em;
+  top: 1.2em;
+}
+#studio > div {
+  display: flex;
+  justify-content: space-between;
+  width: 66.66%;
+  margin: auto;
+}
+#studio > div::before {
+  content: url("../../assets/images/trple-leaf.png");
+  position: absolute;
+  left: calc(50% - 17.225px);
+  top: 40%;
+}
+#studio > div p {
+  width: 44.5%;
+}
+
+@media all and (max-width: 1192px) {
+  .story__article::before {
+    left: 40%;
+    top: 8em;
+  }
+  .story__article::after {
+    left: calc(40% + 414px);
+    top: 2em;
+  }
+}
+@media all and (max-width: 1040px) {
+  .story__article::before {
+    left: 33%;
+    top: 15em;
+  }
+  .story__article::after {
+    content: url("../../assets/images/Hibiscus.png");
+    position: absolute;
+    left: calc(33% + 414px);
+    top: 9em;
+  }
+  .story #characters {
+    flex-direction: column;
+  }
+}
+@media all and (max-width: 920px) {
+  .story h2::before {
+    content: "";
+  }
+  .story h2::after {
+    content: "";
+  }
+  .story__article {
+    width: 80%;
+  }
+  .story__article::before {
+    content: "";
+  }
+  .story__article::after {
+    content: "";
+  }
+  .story #characters {
+    flex-direction: column;
+  }
+  .story #place > div {
+    margin: auto;
+    width: 75%;
+  }
+  #studio h2::after {
+    content: "";
+  }
+  #studio > div {
+    flex-direction: column;
+  }
+  #studio > div::before {
+    content: "";
+  }
+  #studio > div p {
+    width: 100%;
+  }
+}
+@media all and (max-width: 700px) {
+  #studio h2::before {
+    content: "";
+  }
 }/*# sourceMappingURL=custom.css.map */

@@ -16,10 +16,11 @@
 @keyframes Banner-fade-down {
     0% {
         opacity: 0;
-        background-position: 0 300px;
+        transform: translateY(700px);
     }
     100% {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 @keyframes fade-in {
@@ -50,7 +51,7 @@
 }
 
 //****************************** Classes using the animations *******************************/
-$animation-duration: .75s;
+$animation-duration: 2s;
 
 .banner-fade-down {
     animation: Banner-fade-down $animation-duration ease-in-out;

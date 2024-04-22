@@ -11,10 +11,11 @@
 @keyframes Banner-fade-down {
   0% {
     opacity: 0;
-    background-position: 0 300px;
+    transform: translateY(700px);
   }
   100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes fade-in {
@@ -43,17 +44,17 @@
   }
 }
 .banner-fade-down {
-  animation: Banner-fade-down 0.75s ease-in-out;
+  animation: Banner-fade-down 2s ease-in-out;
 }
 
 .title-animation {
-  animation: Title-Animation 0.75s ease-in-out;
+  animation: Title-Animation 2s ease-in-out;
 }
 
 .fade-in {
-  animation: fade-in 0.75s ease-in-out;
+  animation: fade-in 2s ease-in-out;
 }
 
 .floating-diagonal-cat {
-  animation: floating-diagonal-cat 0.75s infinite ease-in-out;
+  animation: floating-diagonal-cat 2s infinite ease-in-out;
 }/*# sourceMappingURL=animations.css.map */
