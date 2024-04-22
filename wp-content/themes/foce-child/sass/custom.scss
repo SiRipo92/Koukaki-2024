@@ -18,10 +18,25 @@
 @import "abstracts/mixins/mixins";
 
 // Import keyframes for animations 
-@import "abstracts/keyframes/keyframes";
+@import "abstracts/animations/animations";
 
 // Import the footer styles from the parent theme to be modified
 @import "base/elements/footer";
 
 // Import custom stylesheet for the front page
 @import "layouts/front-page";
+
+
+// Global styles
+
+h2, h3 {
+    box-sizing:  border-box;
+    background-size: 100% 100%;
+    text-align: center;
+    overflow: hidden;
+    transition-duration: 1.5s;
+
+    span {
+        display: block;
+    }
+}
