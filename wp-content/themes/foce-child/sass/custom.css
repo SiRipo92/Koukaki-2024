@@ -128,7 +128,7 @@
 
 .story h2::after, .story__article::after,
 #studio h2::before, #studio h2::after,
-.nomination::before, .nomination::after,
+.studio_nomination::before, .studio_nomination::after,
 .site-footer ul::after {
   animation: spin-flowers var(--flowers-rotation-speed) linear infinite;
 }
@@ -157,34 +157,23 @@
   padding-bottom: 1em;
   overflow: hidden;
 }
-.site-footer::before {
-  content: url("./assets/images/Sunflower.png");
-  position: absolute;
-  left: 4em;
-  top: 0em;
-}
-.site-footer::after {
-  content: url("./assets/images/orchid.png");
-  position: absolute;
-  right: -4em;
-  bottom: 7.8em;
-}
-.site-footer ul {
+
+ul {
   padding: 0;
   margin: 0;
   display: flex;
   width: 100%;
   list-style-type: none;
 }
-.site-footer ul li {
+ul li {
   flex: 1;
   text-align: center;
 }
-.site-footer ul li a {
+ul li a {
   text-decoration: none;
 }
-.site-footer ul::after {
-  content: url("./assets/images/hibiscus_footer.png");
+ul::after {
+  content: url("../../../assets/images/hibiscus_footer.png");
   position: absolute;
   left: calc(50% - 323px);
   bottom: -28.5em;
@@ -201,6 +190,17 @@
     content: "";
   }
 }
+h2, h3 {
+  box-sizing: border-box;
+  background-size: contain;
+  text-align: center;
+  overflow: hidden;
+  transition-duration: 1.5s;
+}
+h2 span, h3 span {
+  display: block;
+}
+
 .hero-header {
   position: relative;
   overflow: hidden;
@@ -235,13 +235,105 @@
   z-index: 1000;
 }
 
+.studio__nomination {
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  margin-top: 100px;
+  padding: 10% 0 5% 0;
+  gap: 30px;
+}
+.studio__nomination::before {
+  content: url("../assets/images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: -100px;
+  animation: spin-flowers var(--flowers-rotation-speed) linear infinite;
+}
+.studio__nomination::after {
+  content: url("../assets/images/orchid.png");
+  position: absolute;
+  right: 4em;
+  top: -100px;
+  animation: spin-flowers var(--flowers-rotation-speed) linear infinite;
+}
+
+.nomination__title {
+  background-image: url("../assets/images/orange_nomination_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+  align-self: center;
+  margin-left: -100px;
+  padding-right: 10px;
+  overflow: hidden;
+  max-width: 75%;
+  width: 100%;
+  flex: 3;
+}
+
+.oscars-content {
+  width: 90%;
+  flex: 1;
+  margin: 50px 50px;
+  max-height: 100vh;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.nomination__image {
+  flex: 1;
+  height: 100%;
+  min-width: 25%;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+}
+.nomination__image img {
+  width: auto;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.site-footer {
+  position: relative;
+  display: flex;
+  padding-top: 18em;
+  padding-bottom: 1em;
+  overflow: hidden;
+}
+.site-footer::before {
+  content: url("");
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+.site-footer::after {
+  content: url("");
+  position: absolute;
+  right: -4em;
+  bottom: 7.8em;
+}
+
+@media all and (max-width: 920px) {
+  .site-footer::before {
+    content: "";
+  }
+}
+@media all and (max-width: 700px) {
+  .site-footer::after {
+    content: "";
+  }
+}
 @media all and (max-width: 1040px) {
   .story__article::before {
     left: 33%;
     top: 15em;
   }
   .story__article::after {
-    content: url("../../assets/images/Hibiscus.png");
+    content: url("/assets/images/Hibiscus.png");
     position: absolute;
     left: calc(33% + 414px);
     top: 9em;
@@ -290,14 +382,4 @@
   #studio h2::before {
     content: "";
   }
-}
-h2, h3 {
-  box-sizing: border-box;
-  background-size: 100% 100%;
-  text-align: center;
-  overflow: hidden;
-  transition-duration: 1.5s;
-}
-h2 span, h3 span {
-  display: block;
 }/*# sourceMappingURL=custom.css.map */
