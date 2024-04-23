@@ -115,6 +115,7 @@ h2, h3 {
         padding: 0 5%;
     }
 }
+
 .nomination {
     position: relative;
     display: flex;
@@ -124,7 +125,6 @@ h2, h3 {
     align-items: center;
     align-content: center;
     margin-top: 100px;
-
     height: 450px;
     padding: 100px 0 50px 0;
     &::before {
@@ -139,29 +139,34 @@ h2, h3 {
         right: 4em;
         top: -100px;
       }
-}
-
-.nomination__title {
-    flex: 3; // This will take up 75% of the space
-    display: flex;
-    background-image : url('../assets/images/orange_nomination_bg.png');
-    background-repeat: no-repeat;
-    background-size: scale-down;
-    height: 300px;
-    align-self: center;
-    margin-left: -10px;
-    padding-right: 10px;
-    flex-shrink: 0;
-    overflow: auto;
+      &__title {
+            flex: 3; // This will take up 75% of the space
+            display: flex;
+            background-image : url('../assets/images/orange_nomination_bg.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 400px;
+            width: 100%;
+            align-self: center;
+            margin-left: -10px;
+            padding-right: 10px;
+            flex-shrink: 0;
+            overflow: hidden;
+    }
 }
 
 .oscars-content {
     width: 100%;
     flex: 1;
-    margin: 20px 30px;
+    margin: 2em 3em;
+    padding: 0;
     max-width: 60vh;
     max-height: 100vh;
     overflow: auto;
+    & span {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .nomination__image {
@@ -173,7 +178,7 @@ h2, h3 {
     overflow: auto;
     img {
         width: auto;
-        object-fit: fill;
+        object-fit: contain;
     }
 }
 /////////////////// START OF STUDIO SECTION //////////////////////
