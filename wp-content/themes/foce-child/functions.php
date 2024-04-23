@@ -4,17 +4,18 @@ function theme_enqueue_styles() {
     // Add the parent style
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
-    // Add the parallax style
+    // My custom CSS
     wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/sass/custom.css' );
 
     // Add the Swiper CSS
-    wp_enqueue_style( 'swiper-bundle-css',  get_stylesheet_directory_uri() . '/node_modules/swiper/swiper-bundle.min.css', array(), true );
+    wp_enqueue_style( 'swiper-bundle-css', get_stylesheet_directory_uri() . '/node_modules/swiper/swiper-bundle.min.css', array(), true );
     wp_enqueue_script('swiper-bundle-js', get_stylesheet_directory_uri() . '/node_modules/swiper/swiper-bundle.min.js', array(), true);
+
     // Add jQuery from a CDN
-    wp_enqueue_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array('jquery'), '3.7.1', true );
+    wp_enqueue_script('jquery'); 
 
     // Add custom script
-    //wp_enqueue_script( 'custom-script', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'custom-script', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), '1.0.0', true );
     
 }
 

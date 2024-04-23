@@ -1,0 +1,124 @@
+/////////////////// KEYFRAMES
+/// 
+
+@import '../mixins/mixins';
+
+@include keyframes (spin-flowers) {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@include keyframes(fade-in) {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@include keyframes(fade-out) {
+  0%{
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframes(fade-in-slide-up) {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+@include keyframes (fade-in-slide-down) {
+  from {
+    opacity: 0;
+    transform: translateY(-300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+@include keyframes (slide-up) {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+////////////////  Slowdown the animation for the titles
+
+@include keyframes(title-fade-in) {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: .2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(title-slide-up) {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+// Floating Logo 
+@include keyframes(floating) {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  10%, 90% {
+    transform: translate3d(5px, 20px, 15px);
+  }
+  20%, 80% {
+    transform: translate3d(20px, -20px, -20px);
+
+  }
+  30%, 70% {
+    transform: translate3d(5px, 10px, 10px);
+ }
+  40%, 60% {
+    transform: translate3d(-20px, -20px, -5px); 
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+}
